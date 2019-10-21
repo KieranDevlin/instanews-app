@@ -1,0 +1,25 @@
+/* TYPOGRAPHY */
+
+:root {
+    --main-text: #ffffff;
+    --footer-text: #c2c2c2;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--main-text);
+    font-weight: 300;
+}
+
+footer {
+    color: var(--footer-text);
+}
+
+@media screen and (min-width:600px){
+    
+}
+
+@media screen and (min-width:1240px){
+
+}
