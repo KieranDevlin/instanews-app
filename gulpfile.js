@@ -24,11 +24,6 @@ gulp.task("scripts",
         })
 );
 
-gulp.task("say_hello", function (done) {
-    console.log("Hello!");
-    done();
-});
-
 gulp.task('browser-sync', function () {
     browserSync.init({
         server: {
