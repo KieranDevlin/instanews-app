@@ -62,7 +62,7 @@ html {
 }
 
 .text-box{
-    background-color: $abstract-box-color;
+    background: rbga($footer-color, 0.5);
 }
 
 footer {

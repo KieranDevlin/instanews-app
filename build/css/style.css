@@ -83,10 +83,10 @@ html {
     color: #ffffff; }
 
 .text-box {
-  background-color: rbga(10, 10, 10, 50%); }
+  background: rbga(blue, 0.5); }
 
 footer {
-  color: #c2c2c2; }
+  color: rbga(blue, 0.5); }
 
 /* TYPOGRAPHY */
 html {
@@ -153,7 +153,7 @@ html {
     height: 25rem; }
     .story-container .nytimes-story:hover {
       font-size: 1.5rem;
-      box-shadow: 5px 5px 10px 10px #c2c2c2;
+      box-shadow: 5px 5px 10px 10px #000000;
       -webkit-transform: translate3d(0, -10px, 10px);
               transform: translate3d(0, -10px, 10px); }
     @media (min-width: 600px) {
@@ -164,9 +164,10 @@ html {
         width: 25%; } }
   .story-container .text-box {
     padding: 1rem;
+    background-color: rgba(71, 64, 64, 0.5);
     text-decoration: none;
-    -webkit-transition: .1s ease-in-out;
-    transition: .1s ease-in-out; }
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out; }
 
 .footer {
   display: -webkit-box;
