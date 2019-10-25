@@ -1,0 +1,24 @@
+@mixin dirWrapFlex($display:flex,$direction:row, $wrap:wrap) {
+    display: $display;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+
+@mixin centerFlex($display:flex, $justify:center, $align:center) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+
+@mixin tablet {
+    @media (min-width: $tablet-width) {
+      @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-width) {
+      @content;
+    }
+}

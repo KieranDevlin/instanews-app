@@ -1,0 +1,69 @@
+/* TYPOGRAPHY */
+
+
+html {
+    box-sizing: border-box;
+}
+
+.header {
+    @include centerFlex();
+    @include dirWrapFlex(flex, column);
+    // flex-direction: column;
+    height: 90vh;
+    p {
+        padding: 1rem;
+
+    }
+    @include tablet {
+        
+            @include dirWrapFlex(flex, row);
+        
+    }
+    @include desktop {
+            width: 50%;
+            @include centerFlex(flex, space-around);
+    }
+}
+
+
+.search-box {
+    @include dirWrapFlex(flex, column);
+    padding: 1rem;
+}
+
+.story-container {
+    @include dirWrapFlex(flex, row, wrap);
+    .nytimes-story {
+        background-size: cover;
+        background-position: center center;
+        @include centerFlex(flex, center, flex-end);
+        width: 100%;
+        height: 25rem;
+        &:hover {
+            font-size: 1.5rem;
+            box-shadow: 5px 5px 10px 10px $box-shadow-color;
+            transform: translate3d(0, -10px, 10px);
+        }
+        @include tablet {
+                width: 33%;
+        }
+        @include desktop {
+                width: 25%;
+        }
+
+    }
+    .text-box {
+        padding: 1rem;
+        // background-color: rgba(71, 64, 64, 0.5);
+        text-decoration: none;
+        transition: .1s ease-in-out;
+    }
+}
+
+.footer {
+    @include centerFlex();
+    padding: 2rem 0;
+    @include desktop {
+            width: 25%;
+        }
+}
