@@ -38,12 +38,27 @@ html {
 }
 
 .nytimes-story {
+    background-size: cover;
+    background-position: center center;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     width: 100%;
-    background: radial-gradient(blue, red);
     height: 25rem;
+}
+
+.text-box {
+    color: white;
+    padding: 1rem;
+    background-color: rgba(71, 64, 64, 0.5);
+    text-decoration: none;
+    transition: .1s ease-in-out;
+}
+
+.nytimes-story:hover {
+    font-size: 1.5rem;
+    box-shadow: 5px 5px 10px 10px rgba(255, 243, 243, 0.5);
+    transform: translate3d(0, -10px, 10px);
 }
 
 .footer {
