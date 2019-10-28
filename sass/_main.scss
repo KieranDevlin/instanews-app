@@ -32,7 +32,7 @@ html {
 }
 
 .story-container {
-    @include dirWrapFlex(flex, row, wrap);
+    // @include dirWrapFlex(flex, row, wrap);
     .nytimes-story {
         background-size: cover;
         background-position: center center;
@@ -41,19 +41,20 @@ html {
         height: 25rem;
         &:hover {
             font-size: 1.5rem;
-            box-shadow: 5px 5px 10px 10px $box-shadow-color;
+            box-shadow: 5px 5px 10px 10px darken($footer-color, 20%);
             transform: translate3d(0, -10px, 10px);
         }
         @include tablet {
-                width: 33%;
+                // width: 33%;
         }
         @include desktop {
-                width: 25%;
+                // width: 25%;
         }
 
     }
     .text-box {
         padding: 1rem;
+        background-color: rgba($footer-color, 0.5);
         text-decoration: none;
         transition: .2s ease-in-out;
     }

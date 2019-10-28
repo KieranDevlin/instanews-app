@@ -15,10 +15,10 @@
     @media (min-width: $tablet-width) {
       @content;
     }
-}
+  }
 
-@mixin desktop {
+  @mixin desktop {
     @media (min-width: $desktop-width) {
       @content;
     }
-}
+  }

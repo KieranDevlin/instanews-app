@@ -1,0 +1,30 @@
+    .story-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: .5rem;
+        
+        
+    }
+
+    @include tablet {
+        
+        
+        .story-container {
+            grid-template-columns: 1fr 1fr 1fr;
+           
+            grid-column: 1/2;
+
+           }
+        
+    }
+
+    @include desktop {
+        
+        .story-container {
+            grid-template-columns: repeat(4, 1fr);
+            // display: grid;
+            .nytimes-story {
+            }
+        }
+
+    }
