@@ -46,9 +46,6 @@
     font-style: italic;
 }
 
-$font-size: 16px;
-$font-family:'Open Sans', sans-serif; 
-
 html {
     background-color: $main-background-color;
     font-size: $font-size;
@@ -60,7 +57,6 @@ html {
         color: $main-text-color;
 
     }
-
 
 }
 

@@ -1,5 +1,3 @@
-/* TYPOGRAPHY */
-
 
 html {
     box-sizing: border-box;
@@ -8,20 +6,18 @@ html {
 .header {
     @include centerFlex();
     @include dirWrapFlex(flex, column);
-    // flex-direction: column;
     height: 90vh;
     p {
         padding: 1rem;
 
     }
     @include tablet {
-        
-            @include dirWrapFlex(flex, row);
+        @include dirWrapFlex(flex, row);
         
     }
     @include desktop {
-            width: 50%;
-            @include centerFlex(flex, space-around);
+        width: 50%;
+        @include centerFlex(flex, space-around);
     }
 }
 
@@ -32,7 +28,6 @@ html {
 }
 
 .story-container {
-    // @include dirWrapFlex(flex, row, wrap);
     .nytimes-story {
         background-size: cover;
         background-position: center center;
@@ -43,12 +38,6 @@ html {
             font-size: 1.5rem;
             box-shadow: 5px 5px 10px 10px darken($footer-color, 20%);
             transform: translate3d(0, -10px, 10px);
-        }
-        @include tablet {
-                // width: 33%;
-        }
-        @include desktop {
-                // width: 25%;
         }
 
     }

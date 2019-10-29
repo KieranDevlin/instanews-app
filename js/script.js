@@ -6,7 +6,7 @@ $('#selection').on('change', function () {
 
     $.ajax({
         method: 'GET',
-        url: 'http://api.nytimes.com/svc/topstories/v2/' + (this.value) + '.json?api-key=LfK9pjJw3UwDVJPe2KMmtjXGZvzaUFsD&limit=12',
+        url: 'http://api.nytimes.com/svc/topstories/v2/' + (this.value) + '.json?api-key=LfK9pjJw3UwDVJPe2KMmtjXGZvzaUFsD',
 
         dataType: 'json'
     })
