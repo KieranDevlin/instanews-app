@@ -1,9 +1,17 @@
-// const selector = document.getElementById('selection').value;
+const articleSelector = document.getElementById('selection');
+const storyContainer = document.getElementById('story-container');
 
-$('#selection').on('change', function () {
-    $('.story-container').empty();
+articleSelector.addEventListener('change', function () {
+
+    /* this is jquery method to empty inner contents of .story-container
+     $('.story-container').empty(); */
+
+    /* this is js method to empty inner contents, html in this case, 
+    so new content from API can fill the same area */
+    storyContainer.innerHTML = '';
 
 
+    // using jquery's ajax method to GET data from New York Times API
     $.ajax({
         method: 'GET',
         url: 'http://api.nytimes.com/svc/topstories/v2/' + (this.value) + '.json?api-key=LfK9pjJw3UwDVJPe2KMmtjXGZvzaUFsD',
@@ -11,55 +19,38 @@ $('#selection').on('change', function () {
         dataType: 'json'
     })
         .done(function (data) {
-            // console.log(data.results);
 
-
+            /*This filters through all the NYT articles to check if the article has an image
+            and adds an article to an array with a 12 item limit */
             const filteredResults = data.results.filter(function (articleObject) {
-                return articleObject.multimedia[4] !== 'undefined';
+                return typeof articleObject.multimedia[4] !== 'undefined';
             }).slice(0, 12);
 
-            console.log("filtered results", filteredResults);
-
-
+            /*looping through all 12 items in filterResults, creating html elements
+            and assiging classes to them */
             $.each(filteredResults, function (index, value) {
-
-
-                // console.log(data.results[0].multimedia[4].url);
 
                 $('.story-container').append(`<div style='background-image:url(${value.multimedia[4].url});'> <a href='${value.short_url}'> ${value.abstract} </a> </div>`);
                 $('.story-container').children('div').addClass('nytimes-story');
                 $('.story-container').children('div').children('a').addClass('text-box');
             });
-            // data.results
-            // .filter(
-            //     this.multimedia[4].url === false
-            //     function () {
-            //     $(this.multimedia[4].url).filter(function () {
-            //         this.multimedia[4].url !== 'undefined'
-            //     })
 
-            // }
-            // )
-            // .splice(0, 12), function (key, value) {
+            /*
 
+            this is a bad way of checking if nyt API content has images
 
+            if (typeof value.multimedia[4] === 'undefined' || value.multimedia[4] === null) {
+                return;
+            }
+            // else {
 
-            // if (typeof value.multimedia[4] === 'undefined' || value.multimedia[4] === null) {
-            //     return;
-            // }
-            // // else {
-            // console.log(data.results[0].multimedia[4].url);
-
-            // $('.story-container').append(`<div style='background-image:url(${value.multimedia[4].url});'> <a href='${value.short_url}'> ${value.abstract} </a> </div>`);
-            // $('.story-container').children('div').addClass('nytimes-story');
-            // $('.story-container').children('div').children('a').addClass('text-box');
-            //THIS IS THE WRONG WAY TO DO IT --> $('.nytimes-story').css('background-image', 'url("' + value.multimedia[4].url + '")');
-            // }
-
-
-            // }
-            // );
-
+            this method won't work because it only re-assigns the nyt API image to one css class,
+            so on the last iteration all the divs will have the same background image
+            $('.nytimes-story').css('background-image', 'url("' + value.multimedia[4].url + '")');
+            }
+            }
+            );
+            */
 
         });
 
