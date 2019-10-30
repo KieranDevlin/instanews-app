@@ -15,12 +15,13 @@
 
 <body>
     <header id="header" class="header header-base-state">
-
+        <h1>InstaNews New York Times API app</h1>
         <a href=""><img id="logo" class="logo-base-state" src="./images/nyt-logo.svg" alt="New York Times logo"></a>
 
         <div class="search-box">
             <p>Choose a selection:</p>
 
+            <label for="selection">New York Times Top Stories Selector</label>
             <select name="selection" id="selection">
                 <option value="" disabled selected hidden>Selections...</option>
                 <option value="arts">Arts</option>
@@ -34,6 +35,8 @@
             </select>
         </div>
 
+        <img id="loading-gif" class="appear-on-load gif-style" src="./images/ajax-loader.gif"
+            alt="Loading gif waiting for content to load">
     </header>
     <section>
         <div class="story-container" id="story-container">
