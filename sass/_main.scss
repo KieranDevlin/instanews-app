@@ -5,7 +5,9 @@ html * {
    
 }
 
+
 .header {
+
 
 
     h1 {
@@ -28,7 +30,7 @@ html * {
         margin: 0 auto;
         width: 15%;
 
-        @include tablet {
+        @include media(600px) {
             width: 5%;
             position: absolute;
             top: 50%;
@@ -36,12 +38,12 @@ html * {
             transform: translate(-50%, -50%);
         }
 
-        @include desktop {
+        @include media(1000px) {
 
         }
     }
 
-    .appear-on-load {
+    .hideElement {
         display: none;
     }
 
@@ -51,12 +53,12 @@ html * {
     
     &.header-base-state {
         height: 90vh;
-        transition: 1s;
+        transition: .5s;
     }
 
     .logo-base-state {
         width: 220px;
-        transition: 1s;
+        transition: .5s;
     }
 
     .animateLogo {
@@ -67,7 +69,13 @@ html * {
         height: 400px;
     }
 
-    @include tablet {
+    .search-box {
+        @include dirWrapFlex(flex, column);
+        padding: 1rem;
+    
+    }
+
+    @include media($tablet) {
         @include dirWrapFlex(flex, row);
         .animateLogo {
             width: 80px;
@@ -77,7 +85,7 @@ html * {
             height: 160px;
         }
     }
-    @include desktop {
+    @include media($desktop) {
         width: 50%;
         @include centerFlex(flex, space-around);
 
@@ -91,20 +99,21 @@ html * {
 
         
     }
-}
-
-
-.search-box {
-    @include dirWrapFlex(flex, column);
-    padding: 1rem;
 
 }
+
+section {
+    
+    .spaceElement{
+        height: 301.7px;
+    }
 
 .story-container {
+    margin: 0 0.5rem;
     .nytimes-story {
         position: relative;
         overflow: hidden;
-        background-size: cover;
+        background-size: cover cover;
         background-position: center center;
         @include centerFlex(flex, center, flex-end);
         width: 100%;
@@ -115,10 +124,12 @@ html * {
             box-shadow: 0 0 20px 5px lighten($footer-color, 20%);
             transform: translate3d(0, -10px, 20px);
             z-index: 99;
+            
             .text-box{
-                bottom: 0;
+                transform: translateY(0);
             }
             .nytText{
+                
                 transition-delay: .5s;
             }
         }
@@ -137,7 +148,7 @@ html * {
         @include dirWrapFlex(flex, column);
         @include centerFlex(flex, space-between);
         position: absolute;
-        bottom: -70%;
+        transform: translateY(70%);
         height:100%;
         padding: 2rem 1rem;
         background-color: darken(rgba($footer-color, 0.75) , 50%);
@@ -149,6 +160,7 @@ html * {
             transition-delay: .5s;
             text-decoration: underline;
             font-weight: bold;
+            
         }
     
         & .nytDate {
@@ -165,12 +177,12 @@ html * {
     
 
 }
-
+}
 .footer {
     @include centerFlex();
-    // padding: 2rem 0;
+    padding: 2rem 0;
     height: 10vh;
-    @include desktop {
+    @include media($desktop) {
             width: 25%;
         }
 }

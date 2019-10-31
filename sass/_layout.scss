@@ -5,7 +5,7 @@
         
     }
 
-    @include tablet {
+    @include media($tablet) {
         
         .story-container {
             grid-template-columns: 1fr 1fr 1fr;
@@ -13,7 +13,7 @@
            }
     }
 
-    @include desktop {
+    @include media($desktop) {
         
         .story-container {
             grid-template-columns: repeat(4, 1fr);

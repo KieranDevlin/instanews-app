@@ -8,18 +8,41 @@ document.addEventListener('DOMContentLoaded', function () {
     const nytLogo = document.getElementById('logo');
     const siteHeader = document.getElementById('header');
     const loadingGif = document.getElementById('loading-gif');
+    const spacer = document.getElementById('spacer');
 
+
+
+    $(function () {
+        $('#selection').selectric();
+    });
+
+    // $('select').selectric();
+    // ▾
+    // $.ajax({
+    //     method: 'GET',
+    //     url: 'http://api.nytimes.com/svc/topstories/v2/select.json?api-key=LfK9pjJw3UwDVJPe2KMmtjXGZvzaUFsD',
+    //     dataType: 'json'
+
+
+    //     $('').append(data).selectric();
+    // }
+    // );
 
     /* this listener triggers when user selects a new category of nyt content
     and displays that content inside a series of 12 list items */
-    articleSelector.addEventListener('change', function () {
+    articleSelector.addEventListener('change', function getContent() {
+
 
         // these classes add a 1s tranistion to shrink the header and logo
         nytLogo.classList.add('animateLogo');
         siteHeader.classList.add('animateHeader');
 
+        /*adds classes that play gif until API kicks in and 
+        increases the header height briefly*/
+        loadingGif.classList.remove('hideElement');
+        spacer.classList.add('spaceElement');
 
-        loadingGif.classList.remove('appear-on-load');
+
 
         /* this is jquery method to empty inner contents of .story-container
          $('.story-container').empty();
@@ -36,24 +59,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
             dataType: 'json'
         })
-            .done(function (data) {
+            .done(function createContent(data) {
 
+                console.log(data);
                 /*This filters through all the NYT articles to check if the article has an image
                 and adds an article to an array with a 12 item limit */
-                const filteredResults = data.results.filter(function (articleObject) {
+                const filteredResults = data.results.filter(function sortContent(articleObject) {
                     return typeof articleObject.multimedia[4] !== 'undefined';
                 }).slice(0, 12);
-                console.log(filteredResults)
 
                 /*looping through all 12 items in filterResults, creating html elements
                 and assiging classes to them */
-                $.each(filteredResults, function (index, value) {
+                $.each(filteredResults, function appendContent(index, value) {
 
                     $('.story-container').append(
-                        `<a class='nytimes-story' href='${value.short_url}' style='background-image:url(${value.multimedia[4].url});'> 
+                        `<a class='nytimes-story' href='${value.short_url}' style='background: url(${value.multimedia[4].url}),url(../../images/nyt-logo-inverse.png); background-size: cover; background-position: center center'> 
                         <div class='text-box' >     
                             <h2 class="nytTitle">${value.title}</h2>
-                            <p class="nytDate">${value.byline}<br>${value.published_date}</p>
+                            <p class="nytDate">${value.byline}<br>${value.updated_date.slice(0, 10)}</p>
                             <p class="nytAbstract">${value.abstract}</p>
                         </div>
                     </a>`);
@@ -65,6 +88,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     $('.story-container').children('a').children('div').children('p').addClass('nytTitle');*/
                 });
 
+
+                $('.nytimes-story').hide().first().show(200, function showNext() {
+                    $(this).next('.nytimes-story').show(200, showNext);
+
+                });
                 /*this is a bad way of checking if nyt API content has images
     
                 if (typeof value.multimedia[4] === 'undefined' || value.multimedia[4] === null) {
@@ -78,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             })
 
-            .fail(function () {
+            .fail(function errorMessage() {
                 $('.story-container').append(
                     `<p>There seems to be an issue 
                     accessing the New York Times API 
@@ -87,8 +115,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             })
 
-            .always(function () {
-                loadingGif.classList.add('appear-on-load');
+            .always(function hideClass() {
+
+                //hides loading gif with class and removes space with class
+                loadingGif.classList.add('hideElement');
+                spacer.classList.remove('spaceElement');
+
 
             });
     })
