@@ -1,9 +1,10 @@
-
+//all
 html * {
     box-sizing: border-box;
   
 }
 
+//header section
 .header {
 
     @include centerFlex();
@@ -87,6 +88,8 @@ html * {
 
 }
 
+
+//nyt articles section
 section {
     
     .spaceElement{
@@ -168,6 +171,8 @@ section {
     
 
 }
+
+//footer section
 }
 .footer {
     @include centerFlex();

@@ -1,3 +1,4 @@
+//embedded fonts
 @font-face {
     font-family: 'Open Sans';
     src: url('../../fonts/OpenSans-BoldItalic.eot');
@@ -46,6 +47,8 @@
     font-style: italic;
 }
 
+
+//typography colors and sizes
 html {
     background-color: $dark-color-branding;
     font-size: $font-size;

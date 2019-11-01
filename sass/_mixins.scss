@@ -1,3 +1,4 @@
+//hides element but keeps them accessibile for screenreader
 @mixin screenReader {
   clip: rect(1px, 1px, 1px, 1px);
         position: absolute !important;
@@ -8,6 +9,7 @@
         color: $dark-color-branding;
 }
 
+//shortens code for flexbox
 @mixin dirWrapFlex($direction:row, $wrap:wrap, $display:flex) {
   flex-direction: $direction;
   flex-wrap: $wrap;
@@ -20,7 +22,7 @@
   display: $display;
 }
 
-
+//function to scalabily change media queries
 @mixin media($width) {
     @media only screen and (min-width: $width) {
       @content;
