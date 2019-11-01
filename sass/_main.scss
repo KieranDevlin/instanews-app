@@ -30,7 +30,7 @@ html * {
         transform: translate(-50%, -50%);
         width: 15%;
 
-        @include media(600px) {
+        @include media($tablet) {
             width: 5%;
             top:50%;
         }
