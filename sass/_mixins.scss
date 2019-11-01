@@ -4,18 +4,20 @@
         height: 1px;
         width: 1px;
         overflow: hidden;
+        background-color: $light-color-branding;
+        color: $dark-color-branding;
 }
 
-@mixin dirWrapFlex($display:flex,$direction:row, $wrap:wrap) {
-    display: $display;
-    flex-direction: $direction;
-    flex-wrap: $wrap;
+@mixin dirWrapFlex($direction:row, $wrap:wrap, $display:flex) {
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  display: $display;
 }
 
-@mixin centerFlex($display:flex, $justify:center, $align:center) {
-    display: $display;
-    justify-content: $justify;
-    align-items: $align;
+@mixin centerFlex($justify:center, $align:center, $display:flex) {
+  justify-content: $justify;
+  align-items: $align;
+  display: $display;
 }
 
 

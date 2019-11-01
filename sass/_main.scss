@@ -1,14 +1,13 @@
 
 html * {
     box-sizing: border-box;
-
-   
+  
 }
-
 
 .header {
 
-
+    @include centerFlex();
+    @include dirWrapFlex(column, none);
 
     h1 {
         @include screenReader;
@@ -18,29 +17,24 @@ html * {
         @include screenReader;
     }
 
-    @include centerFlex();
-    @include dirWrapFlex(flex, column, none);
-
     p {
         padding: 1rem;
         
     }
 
     .gif-style {
-        margin: 0 auto;
+
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 15%;
 
         @include media(600px) {
             width: 5%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top:50%;
         }
 
-        @include media(1000px) {
-
-        }
     }
 
     .hideElement {
@@ -48,7 +42,7 @@ html * {
     }
 
     select {
-        background-color: $main-text-color;
+        background-color: $light-color-branding;
     }
     
     &.header-base-state {
@@ -66,38 +60,29 @@ html * {
     }
 
     &.animateHeader {
-        height: 400px;
+        height: 40vh;
     }
 
     .search-box {
-        @include dirWrapFlex(flex, column);
+        @include dirWrapFlex(column);
         padding: 1rem;
     
     }
 
     @include media($tablet) {
-        @include dirWrapFlex(flex, row);
+        @include dirWrapFlex(row);
         .animateLogo {
             width: 80px;
         }
 
         &.animateHeader {
-            height: 160px;
+            height: 25vh;
         }
     }
     @include media($desktop) {
         width: 50%;
-        @include centerFlex(flex, space-around);
+        @include centerFlex(space-around);
 
-        .animateLogo {
-            width: 80px;
-        }
-
-        &.animateHeader {
-            height: 160px;
-        }
-
-        
     }
 
 }
@@ -105,23 +90,29 @@ html * {
 section {
     
     .spaceElement{
-        height: 301.7px;
+        height: 50vh;
+        @include media($tablet){
+            height: 65vh;
+        }
+
     }
 
 .story-container {
+
     margin: 0 0.5rem;
+
     .nytimes-story {
         position: relative;
         overflow: hidden;
         background-size: cover cover;
         background-position: center center;
-        @include centerFlex(flex, center, flex-end);
+        @include centerFlex(center, flex-end);
         width: 100%;
         height: 25rem;
         transition: .5s;
 
         &:hover, &:focus {
-            box-shadow: 0 0 20px 5px lighten($footer-color, 20%);
+            box-shadow: 0 0 20px 5px lighten($grey-color-branding, 20%);
             transform: translate3d(0, -10px, 20px);
             z-index: 99;
             
@@ -129,8 +120,8 @@ section {
                 transform: translateY(0);
             }
             .nytText{
-                
                 transition-delay: .5s;
+
             }
         }
 
@@ -138,20 +129,20 @@ section {
 
             .text-box {
                 transition: .1s;
-                background-color: darken(rgba($footer-color, 0.75) , 75%);
+                background-color: darken(rgba($grey-color-branding, 0.75) , 75%);
 
             }
         }
         
     }
     .text-box {
-        @include dirWrapFlex(flex, column);
-        @include centerFlex(flex, space-between);
+        @include dirWrapFlex(column);
+        @include centerFlex(space-between);
         position: absolute;
         transform: translateY(70%);
         height:100%;
         padding: 2rem 1rem;
-        background-color: darken(rgba($footer-color, 0.75) , 50%);
+        background-color: darken(rgba($grey-color-branding, 0.75) , 50%);
         transition: .5s ease-in-out;
         text-decoration: none;
     
@@ -180,7 +171,6 @@ section {
 }
 .footer {
     @include centerFlex();
-    padding: 2rem 0;
     height: 10vh;
     @include media($desktop) {
             width: 25%;

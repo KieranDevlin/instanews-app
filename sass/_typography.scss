@@ -47,24 +47,24 @@
 }
 
 html {
-    background-color: $main-background-color;
+    background-color: $dark-color-branding;
     font-size: $font-size;
     font-family: $font-family;
     font-weight: 300;
     text-decoration: none;
 
     p, a {
-        color: $main-text-color;
+        color: $light-color-branding;
 
     }
 
 }
 
 .text-box{
-    background: rbga($footer-color, 0.5);
+    background: rbga($grey-color-branding, 0.5);
 }
 
 footer {
-    color: $footer-color;
+    color: $grey-color-branding;
 
 }

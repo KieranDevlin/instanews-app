@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* this listener triggers when user selects a new category of nyt content
     and displays that content inside a series of 12 list items */
-    articleSelector.addEventListener('change', function getContent() {
+    $('#selection').on('change', function getContent() {
 
 
         // these classes add a 1s tranistion to shrink the header and logo
