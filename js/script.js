@@ -3,30 +3,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // js variables
 
-    const articleSelector = document.getElementById('selection');
     const storyContainer = document.getElementById('story-container');
     const nytLogo = document.getElementById('logo');
     const siteHeader = document.getElementById('header');
     const loadingGif = document.getElementById('loading-gif');
     const spacer = document.getElementById('spacer');
 
-
-
     $(function () {
         $('#selection').selectric();
     });
-
-    // $('select').selectric();
-    // ▾
-    // $.ajax({
-    //     method: 'GET',
-    //     url: 'http://api.nytimes.com/svc/topstories/v2/select.json?api-key=LfK9pjJw3UwDVJPe2KMmtjXGZvzaUFsD',
-    //     dataType: 'json'
-
-
-    //     $('').append(data).selectric();
-    // }
-    // );
 
     /* this listener triggers when user selects a new category of nyt content
     and displays that content inside a series of 12 list items */
@@ -61,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
             .done(function createContent(data) {
 
-                console.log(data);
+                // console.log(data);
                 /*This filters through all the NYT articles to check if the article has an image
                 and adds an article to an array with a 12 item limit */
                 const filteredResults = data.results.filter(function sortContent(articleObject) {
