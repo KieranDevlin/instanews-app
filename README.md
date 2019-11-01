@@ -12,7 +12,7 @@ This is the second project in the RED Academy Web Dev program. A responsive, sin
 * included essential HTML elements in both head and body of the index     
 * implemented icon fonts via script to font-awesome account
 
-### SCSS 
+### SASS / CSS
       
 * translated original design concept into my own, personalized code    
 * used preprocessor to effectively use variables, partials, and mixins to create scalable code
@@ -31,7 +31,7 @@ This is the second project in the RED Academy Web Dev program. A responsive, sin
 * used strict equality operators where needed
 * used loops, functions, and conditionals to effectively implement JavaScript
 
-### jQuery
+### [jQuery](https://jquery.com/)
 
 * wrapped jQuery in DOMContentLoaded function to wait for content to load
 * used variables to store variables accessed more than once in jQuery
@@ -41,7 +41,7 @@ This is the second project in the RED Academy Web Dev program. A responsive, sin
 * added selectric jQuery plugin and used variables to add custom attributes through SCSS
 
 
-### Gulp 
+### [Gulp] (https://gulpjs.com/)
 
 * used appropriate developer dependancies for scope of project
     * [gulp](https://www.npmjs.com/package/gulp) - task automation toolkit
@@ -54,7 +54,7 @@ This is the second project in the RED Academy Web Dev program. A responsive, sin
     * [gulp-cssnano](https://www.npmjs.com/package/gulp-cssnano) - compresses CSS files 
     * [gulp-prettyError](https://www.npmjs.com/package/gulp-prettyerror) - displays errors in a pretty way without breaking tasks
 
-### Git
+### [Git](https://git-scm.com/)
 
 * created a repository both locally and in the cloud with GitHub
 * effectively used git push to upload my local repository to my remote repository
