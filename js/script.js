@@ -1,21 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
 
 
-    // js variables
+    // DOM variables
 
+    const articleSelector = document.getElementById('selection');
     const storyContainer = document.getElementById('story-container');
     const nytLogo = document.getElementById('logo');
     const siteHeader = document.getElementById('header');
     const loadingGif = document.getElementById('loading-gif');
     const spacer = document.getElementById('spacer');
 
+    //class variables
+    const container = '.story-container';
+    const nyt = 'nytimes-story';
+
     $(function () {
-        $('#selection').selectric();
+        $(articleSelector).selectric();
     });
 
     /* this listener triggers when user selects a new category of nyt content
     and displays that content inside a series of 12 list items */
-    $('#selection').on('change', function getContent() {
+    $(articleSelector).on('change', function getContent() {
 
 
         // these classes add a 1s tranistion to shrink the header and logo
@@ -46,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
             .done(function createContent(data) {
 
-                // console.log(data);
                 /*This filters through all the NYT articles to check if the article has an image
                 and adds an article to an array with a 12 item limit */
                 const filteredResults = data.results.filter(function sortContent(articleObject) {
@@ -57,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 and assiging classes to them */
                 $.each(filteredResults, function appendContent(index, value) {
 
-                    $('.story-container').append(
-                        `<a class='nytimes-story' href='${value.short_url}' style='background: url(${value.multimedia[4].url}),url(../../images/nyt-logo-inverse.png); background-size: cover; background-position: center center'> 
+                    $(container).append(
+                        `<a class=${nyt} href='${value.short_url}' style='background: url(${value.multimedia[4].url}),url(../../images/nyt-logo-inverse.png); background-size: cover; background-position: center center'> 
                         <div class='text-box' >     
                             <h2 class="nytTitle">${value.title}</h2>
                             <p class="nytDate">${value.byline}<br>${value.updated_date.slice(0, 10)}</p>
@@ -74,8 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
 
 
-                $('.nytimes-story').hide().first().show(200, function showNext() {
-                    $(this).next('.nytimes-story').show(200, showNext);
+                $(`.${nyt}`).hide().first().show(200, function showNext() {
+                    $(this).next(`.${nyt}`).show(200, showNext);
 
                 });
                 /*this is a bad way of checking if nyt API content has images
@@ -92,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
 
             .fail(function errorMessage() {
-                $('.story-container').append(
+                $(container).append(
                     `<p>There seems to be an issue 
                     accessing the New York Times API 
                     at this time, we aplogize for the 
