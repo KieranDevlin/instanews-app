@@ -309,16 +309,16 @@ section .story-container {
     font: 20px/30px Lucida Sans Unicode, Arial Unicode MS, Arial; } }
 
 .selectric-focus .selectric {
-  border-color: #c2c2c2; }
+  border-color: #828282; }
 
 .selectric-hover .selectric {
   border-color: #828282; }
 
 .selectric-hover .selectric .button {
-  color: #c2c2c2; }
+  color: #434343; }
 
 .selectric-hover .selectric .button:after {
-  border-top-color: #c2c2c2; }
+  border-top-color: #030303; }
 
 .selectric-open {
   z-index: 9999; }
@@ -464,11 +464,11 @@ section .story-container {
   overflow: hidden; }
 
 .selectric-items li.selected {
-  background: #ffffff;
+  background: gray;
   color: #000000; }
 
 .selectric-items li.highlighted {
-  background: #ffffff;
+  background: #bfbfbf;
   color: #000000; }
 
 .selectric-items li:after {

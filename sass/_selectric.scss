@@ -52,7 +52,7 @@
   }
   
   .selectric-focus .selectric {
-    border-color: $grey-color-branding;
+    border-color: darken($grey-color-branding, 25%);
   }
   
   .selectric-hover .selectric {
@@ -60,11 +60,11 @@
   }
   
   .selectric-hover .selectric .button {
-    color: $grey-color-branding;
+    color: darken($grey-color-branding, 50%);
   }
   
   .selectric-hover .selectric .button:after {
-    border-top-color: $grey-color-branding;
+    border-top-color: darken($grey-color-branding, 75%);
   }
   
   .selectric-open {
@@ -234,12 +234,12 @@
   }
   
   .selectric-items li.selected {
-    background: $light-color-branding;
+    background: darken($light-color-branding, 50%);
     color: $dark-color-branding;
   }
   
   .selectric-items li.highlighted {
-    background: $light-color-branding;
+    background: darken($light-color-branding, 25%);
     color: $dark-color-branding;
   }
   
