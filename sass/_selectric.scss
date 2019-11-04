@@ -239,7 +239,7 @@
   }
   
   .selectric-items li.highlighted {
-    background: darken($light-color-branding, 25%);
+    background: darken($light-color-branding, 15%);
     color: $dark-color-branding;
   }
   
@@ -264,7 +264,7 @@
   
   .selectric-items li:hover {
     font-weight: bold;
-    background: darken($light-color-branding, 5%);
+    background: darken($light-color-branding, 15%);
     color: darken($dark-color-branding, 50%);
   }
   
