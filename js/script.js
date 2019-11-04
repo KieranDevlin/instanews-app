@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* this listener triggers when user selects a new category of nyt content
     and displays that content inside a series of 12 list items */
-    $(articleSelector).on('change', function (event) {
+    $(articleSelector).on('change', function () {
 
         // these classes add a 1s tranistion to shrink the header and logo
         nytLogo.classList.add('animateLogo');
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
             $(container).append(
                 `<a class=${nyt} href='${value.short_url}' style='background: url(${value.multimedia[4].url}),url(../../images/nyt-logo-inverse.png); background-size: cover; background-position: center center'> 
                 <div class='text-box' >     
-                            <h2 class="nytTitle">${value.title}</h2>
+                            <h3 class="nytTitle">${value.title}</h3>
                             <p class="nytDate">${value.byline}<br>${value.updated_date.slice(0, 10)}</p>
                             <p class="nytAbstract">${value.abstract}</p>
                             </div>
