@@ -1,7 +1,7 @@
 {
-  "name": "gulp-starter",
+  "name": "gulp-project-starter",
   "version": "1.0.0",
-  "description": "My first gulp project",
+  "description": "This gulp setup lets dev watch project update live with browser-sync, auto-prefixes for all browser types, processes scss and minifies css for faster page load, and lints errors in the terminal for better debugging",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
