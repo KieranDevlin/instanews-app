@@ -82,12 +82,6 @@ document.addEventListener("DOMContentLoaded", function() {
                             </div>
                     </a>`
       );
-
-      /*this is a long way to climb the DOM to add classes to the various elements
-            it is more DRY to simply add into the classes in the .append method
-            $('.story-container').children('a').addClass('nytimes-story');
-            $('.story-container').children('a').children('div').addClass('text-box');
-            $('.story-container').children('a').children('div').children('p').addClass('nytTitle');*/
     });
 
     $(`.${nyt}`)
