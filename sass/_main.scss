@@ -104,10 +104,6 @@ section {
 
       &:hover,
       &:focus {
-        //     box-shadow: 0 0 20px 5px lighten($grey-color-branding, 20%);
-        //     transform: translate3d(0, -10px, 20px);
-        //     z-index: 99;
-
         .text-box {
           transform: translateY(0);
         }
@@ -116,14 +112,12 @@ section {
         }
       }
 
-      // &:active{
-
-      //     .text-box {
-      //         transition: .1s;
-      //         background-color: darken(rgba($grey-color-branding, 0.75) , 75%);
-
-      //     }
-      // }
+      &:active {
+        .text-box {
+          transition: 0.1s;
+          background-color: darken(rgba($grey-color-branding, 0.75), 75%);
+        }
+      }
     }
     .text-box {
       @include dirWrapFlex(column);

@@ -206,6 +206,10 @@ section .story-container {
     section .story-container .nytimes-story:hover .nytText, section .story-container .nytimes-story:focus .nytText {
       -webkit-transition-delay: 0.5s;
               transition-delay: 0.5s; }
+    section .story-container .nytimes-story:active .text-box {
+      -webkit-transition: 0.1s;
+      transition: 0.1s;
+      background-color: rgba(3, 3, 3, 0.75); }
   section .story-container .text-box {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
