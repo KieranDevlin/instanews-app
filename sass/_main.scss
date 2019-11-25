@@ -1,183 +1,166 @@
 //all
 html * {
-    box-sizing: border-box;
-  
+  box-sizing: border-box;
 }
 
 //header section
 .header {
+  @include centerFlex();
+  @include dirWrapFlex(column, none);
 
-    @include centerFlex();
-    @include dirWrapFlex(column, none);
+  h1 {
+    @include screenReader;
+  }
 
-    h1 {
-        @include screenReader;
-     }
+  label {
+    @include screenReader;
+  }
 
-    label {
-        @include screenReader;
+  p {
+    padding: 1rem;
+  }
+
+  .gif-style {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15%;
+
+    @include media($tablet) {
+      width: 5%;
+      top: 50%;
     }
+  }
 
-    p {
-        padding: 1rem;
-        
-    }
+  .hideElement {
+    display: none;
+  }
 
-    .gif-style {
+  select {
+    background-color: $light-color-branding;
+  }
 
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 15%;
+  &.header-base-state {
+    height: 90vh;
+    transition: 0.5s;
+  }
 
-        @include media($tablet) {
-            width: 5%;
-            top:50%;
-        }
+  .logo-base-state {
+    width: 220px;
+    transition: 0.5s;
+  }
 
-    }
+  .animateLogo {
+    width: 110px;
+  }
 
-    .hideElement {
-        display: none;
-    }
+  &.animateHeader {
+    height: 40vh;
+  }
 
-    select {
-        background-color: $light-color-branding;
-    }
-    
-    &.header-base-state {
-        height: 90vh;
-        transition: .5s;
-    }
+  .search-box {
+    @include dirWrapFlex(column);
+    padding: 1rem;
+  }
 
-    .logo-base-state {
-        width: 220px;
-        transition: .5s;
-    }
-
+  @include media($tablet) {
+    @include dirWrapFlex(row);
     .animateLogo {
-        width: 110px;
+      width: 80px;
     }
 
     &.animateHeader {
-        height: 40vh;
+      height: 25vh;
     }
-
-    .search-box {
-        @include dirWrapFlex(column);
-        padding: 1rem;
-    
-    }
-
-    @include media($tablet) {
-        @include dirWrapFlex(row);
-        .animateLogo {
-            width: 80px;
-        }
-
-        &.animateHeader {
-            height: 25vh;
-        }
-    }
-    @include media($desktop) {
-        width: 50%;
-        @include centerFlex(space-around);
-
-    }
-
+  }
+  @include media($desktop) {
+    width: 50%;
+    @include centerFlex(space-around);
+  }
 }
-
 
 //nyt articles section
 section {
-    
-    .spaceElement{
-        height: 50vh;
-        @include media($tablet){
-            height: 65vh;
-        }
-
+  .spaceElement {
+    height: 50vh;
+    @include media($tablet) {
+      height: 65vh;
     }
+  }
 
-.story-container {
-
+  .story-container {
     margin: 0 0.5rem;
 
     .nytimes-story {
-        position: relative;
-        overflow: hidden;
-        background-size: cover cover;
-        background-position: center center;
-        @include centerFlex(center, flex-end);
-        width: 100%;
-        height: 25rem;
-        transition: .5s;
+      position: relative;
+      overflow: hidden;
+      background-size: cover cover;
+      background-position: center center;
+      @include centerFlex(center, flex-end);
+      width: 100%;
+      height: 25rem;
+      transition: 0.5s;
 
-        &:hover, &:focus {
-            box-shadow: 0 0 20px 5px lighten($grey-color-branding, 20%);
-            transform: translate3d(0, -10px, 20px);
-            z-index: 99;
-            
-            .text-box{
-                transform: translateY(0);
-            }
-            .nytText{
-                transition-delay: .5s;
+      &:hover,
+      &:focus {
+        //     box-shadow: 0 0 20px 5px lighten($grey-color-branding, 20%);
+        //     transform: translate3d(0, -10px, 20px);
+        //     z-index: 99;
 
-            }
+        .text-box {
+          transform: translateY(0);
         }
-
-        &:active{
-
-            .text-box {
-                transition: .1s;
-                background-color: darken(rgba($grey-color-branding, 0.75) , 75%);
-
-            }
+        .nytText {
+          transition-delay: 0.5s;
         }
-        
+      }
+
+      // &:active{
+
+      //     .text-box {
+      //         transition: .1s;
+      //         background-color: darken(rgba($grey-color-branding, 0.75) , 75%);
+
+      //     }
+      // }
     }
     .text-box {
-        @include dirWrapFlex(column);
-        @include centerFlex(space-between);
-        position: absolute;
-        transform: translateY(70%);
-        height:100%;
-        padding: 2rem 1rem;
-        background-color: darken(rgba($grey-color-branding, 0.75) , 50%);
-        transition: .5s ease-in-out;
-        text-decoration: none;
-    
-        & .nytTitle {
-            font-size: $font-size * 1.125;
-            transition-delay: .5s;
-            text-decoration: underline;
-            font-weight: bold;
-            
-        }
-    
-        & .nytDate {
-            font-size: $font-size * .875;
-            font-style: italic ;
-        }
-    
-        & .nytAbstract {
-            font-size: $font-size *1.0675;
-            transition-delay: 1s;
-        }
-        
+      @include dirWrapFlex(column);
+      @include centerFlex(space-between);
+      position: absolute;
+      transform: translateY(70%);
+      height: 100%;
+      padding: 2rem 1rem;
+      background-color: darken(rgba($grey-color-branding, 0.75), 50%);
+      transition: 0.5s ease-in-out;
+      text-decoration: none;
+
+      & .nytTitle {
+        font-size: $font-size * 1.125;
+        transition-delay: 0.5s;
+        text-decoration: underline;
+        font-weight: bold;
+      }
+
+      & .nytDate {
+        font-size: $font-size * 0.875;
+        font-style: italic;
+      }
+
+      & .nytAbstract {
+        font-size: $font-size * 1.0675;
+        transition-delay: 1s;
+      }
     }
-    
+  }
 
-}
-
-//footer section
+  //footer section
 }
 .footer {
-    @include centerFlex();
-    height: 10vh;
-    @include media($desktop) {
-            width: 25%;
-        }
+  @include centerFlex();
+  height: 10vh;
+  @include media($desktop) {
+    width: 25%;
+  }
 }

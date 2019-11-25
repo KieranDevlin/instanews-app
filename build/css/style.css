@@ -138,12 +138,12 @@ html * {
     background-color: #ffffff; }
   .header.header-base-state {
     height: 90vh;
-    -webkit-transition: .5s;
-    transition: .5s; }
+    -webkit-transition: 0.5s;
+    transition: 0.5s; }
   .header .logo-base-state {
     width: 220px;
-    -webkit-transition: .5s;
-    transition: .5s; }
+    -webkit-transition: 0.5s;
+    transition: 0.5s; }
   .header .animateLogo {
     width: 110px; }
   .header.animateHeader {
@@ -198,23 +198,14 @@ section .story-container {
     display: flex;
     width: 100%;
     height: 25rem;
-    -webkit-transition: .5s;
-    transition: .5s; }
-    section .story-container .nytimes-story:hover, section .story-container .nytimes-story:focus {
-      box-shadow: 0 0 20px 5px whitesmoke;
-      -webkit-transform: translate3d(0, -10px, 20px);
-              transform: translate3d(0, -10px, 20px);
-      z-index: 99; }
-      section .story-container .nytimes-story:hover .text-box, section .story-container .nytimes-story:focus .text-box {
-        -webkit-transform: translateY(0);
-                transform: translateY(0); }
-      section .story-container .nytimes-story:hover .nytText, section .story-container .nytimes-story:focus .nytText {
-        -webkit-transition-delay: .5s;
-                transition-delay: .5s; }
-    section .story-container .nytimes-story:active .text-box {
-      -webkit-transition: .1s;
-      transition: .1s;
-      background-color: rgba(3, 3, 3, 0.75); }
+    -webkit-transition: 0.5s;
+    transition: 0.5s; }
+    section .story-container .nytimes-story:hover .text-box, section .story-container .nytimes-story:focus .text-box {
+      -webkit-transform: translateY(0);
+              transform: translateY(0); }
+    section .story-container .nytimes-story:hover .nytText, section .story-container .nytimes-story:focus .nytText {
+      -webkit-transition-delay: 0.5s;
+              transition-delay: 0.5s; }
   section .story-container .text-box {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -233,13 +224,13 @@ section .story-container {
     height: 100%;
     padding: 2rem 1rem;
     background-color: rgba(67, 67, 67, 0.75);
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
     text-decoration: none; }
     section .story-container .text-box .nytTitle {
       font-size: 18px;
-      -webkit-transition-delay: .5s;
-              transition-delay: .5s;
+      -webkit-transition-delay: 0.5s;
+              transition-delay: 0.5s;
       text-decoration: underline;
       font-weight: bold; }
     section .story-container .text-box .nytDate {
